@@ -24,7 +24,7 @@ public class P0006ZigZagConversion
 
     public static void main(String[] args) {
         P0006ZigZagConversion ob = new P0006ZigZagConversion();
-        String ret = ob.convert("A", 1);
+        String ret = ob.convert("RAJSHREE", 3);
         boolean result = ret.equals("ABCED");
         System.out.println(result);
         if (!result)

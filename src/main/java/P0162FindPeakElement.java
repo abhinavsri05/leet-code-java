@@ -23,7 +23,6 @@ public class P0162FindPeakElement
             return -1;
 
         int mid = (startIndex + endIndex) / 2;
-        System.out.println("Start: " + startIndex + ", End: " + endIndex + ", Mid: " + mid);
 
         if (num[mid] < num[mid + 1])
                 return search(num, mid + 1, endIndex);

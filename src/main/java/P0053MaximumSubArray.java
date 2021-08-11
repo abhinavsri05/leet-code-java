@@ -10,11 +10,9 @@ public class P0053MaximumSubArray
     {
         int curr = nums[0];
         int maxVal = nums[0];
-        int num;
 
         for (int i = 1; i < nums.length; i++) {
-            num = nums[i];
-            curr = Math.max(num, curr + num);
+            curr = Math.max(nums[i], curr + nums[i]);
             maxVal = Math.max(maxVal, curr);
         }
 

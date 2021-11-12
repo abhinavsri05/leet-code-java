@@ -1,3 +1,5 @@
+package n02_divide_and_conquer;
+
 public class P0162FindPeakElement
 {
     /*
@@ -12,7 +14,7 @@ public class P0162FindPeakElement
 
     public int findPeakElement(int[] nums)
     {
-        return search(nums, 0, nums.length - 1);
+        return nums[search(nums, 0, nums.length - 1)];
     }
 
     private int search(int[] num, int startIndex, int endIndex)
@@ -32,7 +34,7 @@ public class P0162FindPeakElement
 
     public static void main(String[] args) {
         P0162FindPeakElement sol = new P0162FindPeakElement();
-        int[] n = {1, 6};
+        int[] n = {-1, 0, 5, 4, 3, 2};
         System.out.println(sol.findPeakElement(n));
 
     }

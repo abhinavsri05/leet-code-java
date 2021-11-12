@@ -1,3 +1,5 @@
+package n01_data_structures;
+
 public class P0006ZigZagConversion
 {
     public String convert(String s, int numRows)

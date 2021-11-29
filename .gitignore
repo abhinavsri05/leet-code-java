@@ -4,3 +4,4 @@ leet-code-java.iml
 out/
 *.class
 /target/
+/src/main/java/temp_code/

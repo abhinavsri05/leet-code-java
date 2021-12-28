@@ -12,8 +12,9 @@ public class P0206ReverseLinkedList {
 
     public ListNode reverseList(ListNode head)
     {
-        if (head == null || head.next == null)
-            return head;
+        // Following two lines are not needed
+//        if (head == null || head.next == null)
+//            return head;
 
         ListNode prev = null, next;
 

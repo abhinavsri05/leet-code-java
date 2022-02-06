@@ -8,17 +8,33 @@ Given an integer array nums, find the contiguous subarray (containing at least o
 */
 public class P0053MaximumSubArray
 {
-    public int maxSubArray(int[] nums)
-    {
-        int curr = nums[0];
-        int maxVal = nums[0];
+//    public int maxSubArray(int[] nums)
+//    {
+//        int curr = nums[0];
+//        int maxVal = nums[0];
+//
+//        for (int i = 1; i < nums.length; i++) {
+//            curr = Math.max(nums[i], curr + nums[i]);
+//            maxVal = Math.max(maxVal, curr);
+//        }
+//
+//        return maxVal;
+//    }
 
-        for (int i = 1; i < nums.length; i++) {
-            curr = Math.max(nums[i], curr + nums[i]);
-            maxVal = Math.max(maxVal, curr);
+    // Attempt 2
+
+    public int maxSubArray(int[] nums) {
+        int sum = 0;
+        int overAllBest = Integer.MIN_VALUE;
+
+        for (int num: nums)
+        {
+            sum = num + Math.max(sum, 0);
+            overAllBest = Math.max(overAllBest, sum);
         }
 
-        return maxVal;
+        return overAllBest;
+
     }
 
     public static void main(String[] args) {

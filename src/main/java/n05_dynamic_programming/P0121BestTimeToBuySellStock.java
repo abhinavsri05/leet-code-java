@@ -35,6 +35,42 @@ public class P0121BestTimeToBuySellStock
         return maxProfit;
     }
 
+    // 2/7/22 as part of DS-1
+    public int maxProfit2(int[] prices) {
+        int buy = 0;
+        int sell = 0;
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++)
+        {
+            if (prices[i] < prices[buy])
+            {
+                buy = i;
+            }
+
+            if (prices[i] > prices[sell] || sell <= buy)
+            {
+                sell = i;
+                maxProfit = Math.max(maxProfit, prices[sell] - prices[buy]);
+            }
+        }
+
+        return maxProfit;
+
+    }
+
+    public int maxProfitLeetCode(int prices[]) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
+        }
+        return maxprofit;
+    }
+
     public static void main(String[] args) {
 //        int[] prices = { 2, 1, 2, 0, 1};
         int[] prices = {3, 2, 6, 5, 0, 3};

@@ -1,14 +1,14 @@
 package n01_data_structures;
 
 public class P0206ReverseLinkedList {
-    public class ListNode
-    {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
+//    public class ListNode
+//    {
+//        int val;
+//        ListNode next;
+//        ListNode() {}
+//        ListNode(int val) { this.val = val; }
+//        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+//    }
 
     public ListNode reverseList(ListNode head)
     {

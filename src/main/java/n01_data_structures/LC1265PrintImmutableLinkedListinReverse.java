@@ -20,7 +20,7 @@ interface ImmutableListNode
     public String printValue();
 }
 
-public class P1265PrintImmutableLinkedListinReverse {
+public class LC1265PrintImmutableLinkedListinReverse {
     public void printLinkedListInReverse(ImmutableListNode head)
     {
 

@@ -32,6 +32,53 @@ public class LC0162FindPeakElement
         return search(num, startIndex, mid);
     }
 
+    public int findPeakElement2(int[] nums) {
+        if (nums.length <= 1) return 0;
+        int lo = 0;
+        int hi = nums.length - 1;
+        int mid;
+
+        while (lo <= hi)
+        {
+            mid = lo + (hi - lo) / 2;
+            // if (lo == hi) return lo;
+
+            if ((mid == 0 || nums[mid] > nums[mid - 1]) && (mid == nums.length - 1 || nums[mid] > nums[mid + 1])) return mid;
+
+            if ((mid > 0 && nums[mid] < nums[mid - 1]))
+                hi = mid - 1;
+            else
+                lo = mid + 1;
+        }
+
+        return -1;
+
+
+    }
+
+    public int findPeakElement3(int[] nums) {
+        if (nums.length <= 1) return 0;
+        int lo = 0;
+        int hi = nums.length - 1;
+        int mid;
+
+        while (lo < hi)
+        {
+            mid = lo + (hi - lo) / 2;
+
+            // if ((mid == 0 || nums[mid] > nums[mid - 1]) && (mid == nums.length - 1 || nums[mid] > nums[mid + 1])) return mid;
+
+            if (nums[mid] > nums[mid + 1])
+                hi = mid;
+            else
+                lo = mid + 1;
+        }
+
+        return lo;
+
+
+    }
+
     public static void main(String[] args) {
         LC0162FindPeakElement sol = new LC0162FindPeakElement();
         int[] n = {-1, 0, 5, 4, 3, 2};

@@ -36,7 +36,7 @@ package leet_code_contests.weekly.wc281_20220219;
 
 import utils.ListNode;
 
-public class LC6013MergeNodesInBetweenZeros {
+public class LC2181MergeNodesInBetweenZeros {
     public ListNode mergeNodes(ListNode head) {
         ListNode ret = head;
 

@@ -37,7 +37,7 @@ package leet_code_contests.weekly.wc281_20220219;
 
 import java.util.HashMap;
 
-public class LC6015CountArrayPairsDivisibleByK {
+public class LC2183CountArrayPairsDivisibleByK {
     /* My Attempt
     Does not work for :
     [8,10,2,5,9,6,3,8,2]

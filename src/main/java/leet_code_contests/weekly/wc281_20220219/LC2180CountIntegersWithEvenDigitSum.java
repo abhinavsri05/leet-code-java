@@ -26,7 +26,7 @@ The 14 integers less than or equal to 30 whose digit sums are even are
  */
 package leet_code_contests.weekly.wc281_20220219;
 
-public class LC6012CountIntegersWithEvenDigitSum {
+public class LC2180CountIntegersWithEvenDigitSum {
     private int digitSum(int num)
     {
         int sum = 0;

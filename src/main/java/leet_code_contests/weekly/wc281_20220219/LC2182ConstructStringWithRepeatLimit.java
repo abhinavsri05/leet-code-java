@@ -38,5 +38,5 @@ s consists of lowercase English letters.
 
 package leet_code_contests.weekly.wc281_20220219;
 
-public class LC6014ConstructStringWithRepeatLimit {
+public class LC2182ConstructStringWithRepeatLimit {
 }

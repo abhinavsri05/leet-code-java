@@ -55,6 +55,23 @@ public class LC0713SubarrayProductLessThanK {
             }
         }
         return count;
+    }
 
+    // O(n) time and O(1) space
+
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int prod = 1;
+        int count = 0;
+        int left = 0;
+        int right = 0;
+
+        for (right = 0; right < nums.length; right++)
+        {
+            prod *= nums[right];
+            while (prod >= k  && left <= right)
+                prod /= nums[left++];
+            count += right - left + 1;
+        }
+        return count;
     }
 }

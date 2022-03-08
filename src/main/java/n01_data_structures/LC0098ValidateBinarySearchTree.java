@@ -1,6 +1,6 @@
 package n01_data_structures;
 
-import utils.TreeNode;
+import utils01.TreeNode;
 
 public class LC0098ValidateBinarySearchTree {
     public boolean helper(TreeNode root, Integer ll, Integer hl)

@@ -1,6 +1,6 @@
 package n03_graphs;
 
-import utils.Node;
+import utils01.Node;
 
 import java.util.ArrayList;
 import java.util.HashMap;

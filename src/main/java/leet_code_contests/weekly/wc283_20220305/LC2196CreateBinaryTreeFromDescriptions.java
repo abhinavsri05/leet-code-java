@@ -1,6 +1,6 @@
 package leet_code_contests.weekly.wc283_20220305;
 
-import utils.TreeNode;
+import utils01.TreeNode;
 
 import java.util.HashMap;
 

@@ -34,7 +34,7 @@ The beginning and end of the linked list have Node.val == 0.
 
 package leet_code_contests.weekly.wc281_20220219;
 
-import utils.ListNode;
+import utils01.ListNode;
 
 public class LC2181MergeNodesInBetweenZeros {
     public ListNode mergeNodes(ListNode head) {

@@ -1,6 +1,6 @@
 package n01_data_structures;
 
-import utils.ListNode;
+import utils01.ListNode;
 
 public class LC041LinkedListCycle {
 //    public boolean hasCycle(ListNode head) {

@@ -1,5 +1,5 @@
 package n01_data_structures;
-import utils.TreeNode;
+import utils01.TreeNode;
 
 public class LC0226InvertBinaryTree {
     private void helper(TreeNode root)

@@ -1,6 +1,6 @@
 package n01_data_structures;
 
-import utils.TreeNode;
+import utils01.TreeNode;
 
 public class LC0235LowestCommonAncestorOfABinarySearchTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)     {

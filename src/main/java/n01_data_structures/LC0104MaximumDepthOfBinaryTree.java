@@ -1,6 +1,6 @@
 package n01_data_structures;
 
-import utils.TreeNode;
+import utils01.TreeNode;
 
 public class LC0104MaximumDepthOfBinaryTree {
     public int maxDepth(TreeNode root) {

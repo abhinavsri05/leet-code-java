@@ -1,6 +1,6 @@
 package n01_data_structures;
 
-import utils.TreeNode;
+import utils01.TreeNode;
 
 public class LC0701InsertIntoABinarySearchTree {
     public TreeNode insertIntoBST(TreeNode root, int val)

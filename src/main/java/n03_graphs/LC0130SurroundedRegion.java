@@ -31,7 +31,7 @@ public class LC0130SurroundedRegion {
      ["X","O","X","O","X"],
      ["O","X","O","O","O"],
      ["X","X","O","X","O"]]
-     */
+
 
     private static final int[][] directions = {
             {-1, 0},
@@ -92,6 +92,72 @@ public class LC0130SurroundedRegion {
                     else
                         board[r][c] = 'O';
                 }
+            }
+        }
+
+    }
+         */
+    // Attempt 2: Using hint and discussion
+    private static final int[][] directions = {
+            {-1, 0},
+            {0, -1},
+            {0, 1},
+            {1, 0}
+    };
+
+    int m, n;
+    char[][] board;
+
+    private void dfs(int r, int c)
+    {
+        if (r < 0 || r >= m || c < 0 || c >= n || board[r][c] != 'O')
+            return;
+
+        board[r][c] = 'N';
+
+        for (int[] d: directions)
+        {
+            dfs(r + d[0], c + d[1]);
+        }
+
+
+    }
+
+    public void solve(char[][] board)
+    {
+        // Start from the corner O's. Run DFS, all O's conected to these O's will not be flipped. All others will be.
+        this.board = board;
+        m = board.length;
+        n = board[0].length;
+        boolean ret;
+        int r, c;
+
+        // First and last row
+        for (c = 0; c < n; c++)
+        {
+            if (board[0][c] == 'O')
+                dfs(0, c);
+            if (board[m - 1][c] == 'O')
+                dfs(m - 1, c);
+        }
+
+        // First and last column
+        for (r = 0; r < m; r++)
+        {
+            if (board[r][0] == 'O')
+                dfs(r, 0);
+            if (board[r][n - 1] == 'O')
+                dfs(r, n - 1);
+        }
+
+        for (r = 0; r < m; r++)
+        {
+            for (c = 0; c < n; c++)
+            {
+                if (board[r][c] == 'O') board[r][c] = 'X';
+                if (board[r][c] == 'N') board[r][c] = 'O';
+                // Note that the order of the two conditions above cannot be swapped
+
             }
         }
 

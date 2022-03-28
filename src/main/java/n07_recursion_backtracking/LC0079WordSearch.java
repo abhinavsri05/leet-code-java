@@ -14,6 +14,7 @@ public class LC0079WordSearch {
         if (l == wordLength - 1 && word[l] == board[r][c])
             return true;
 
+        // No need to track the letter since if we reach this line then this character would be matching the original string
         board[r][c] = '#';
 
         for (int[] d: direction)

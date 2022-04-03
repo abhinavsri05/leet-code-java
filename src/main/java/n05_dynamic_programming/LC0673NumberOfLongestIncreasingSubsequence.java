@@ -63,4 +63,37 @@ public class LC0673NumberOfLongestIncreasingSubsequence
         return count;
     }
      */
+
+    // Frm discussion
+
+    public int findNumberOfLIS(int[] nums) {
+        // in dp we store the LIS if last number of seq is i
+        int[] dp = new int[nums.length];
+        // in mul we store in how many ways we can obtain the LIS with last element i
+        int[] mul = new int[nums.length];
+        for(int i = 0; i < nums.length; i++){
+            dp[i] = 1;
+            mul[i] = 1;
+            for(int j = 0; j < i; j++)
+                if(nums[j] < nums[i]){
+                    // if equals: we have found a new way to obtain max mult
+                    if(dp[j] + 1 == dp[i]) mul[i] += mul[j];
+                        // else we need to rethink: there is a longest subsequence
+                    else if(dp[j] + 1 > dp[i]){
+                        mul[i] = mul[j];
+                        dp[i] = dp[j] + 1;
+                    }
+                }
+        }
+
+        int max = 0;
+        for(int i = 0; i < dp.length; i++){
+            if(dp[i] > max) max = dp[i];
+        }
+        int sol = 0;
+        for(int i = 0; i < dp.length; i++){
+            if(dp[i] == max) sol += mul[i];
+        }
+        return sol;
+    }
 }

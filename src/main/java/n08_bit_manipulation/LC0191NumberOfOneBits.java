@@ -8,6 +8,7 @@ In Java, the compiler represents the signed integers using 2's complement notati
  */
 
 public class LC0191NumberOfOneBits {
+    // >>> is for calculating unsigned bits whereas >> is for signed bits
     public int hammingWeight(int n) {
         int s = 0;
         while (n != 0)

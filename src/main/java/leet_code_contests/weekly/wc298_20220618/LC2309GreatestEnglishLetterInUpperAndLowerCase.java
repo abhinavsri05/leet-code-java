@@ -4,13 +4,14 @@ public class LC2309GreatestEnglishLetterInUpperAndLowerCase
 {
     public String greatestLetter(String s)
     {
+        // This solution fails for Aa
         int[] found = new int[26];
 
         for (char c: s.toCharArray())
         {
             if ('a' <= c && c <= 'z' && (found[c - 'a'] == 0 || found[c - 'a'] == 2))
                 found[c - 'a'] ++;
-            if ('A' <= c && c <= 'Z' && found[c - 'A'] == 1)
+            if ('A' <= c && c <= 'Z' && found[c - 'A'] == 1) // This condition is incomplete. Should be if ('A' <= c && c <= 'Z' && (found[c - 'A'] == 0 || found[c - 'A'] == 1))
                 found[c - 'A'] += 2;
         }
 

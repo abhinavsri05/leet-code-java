@@ -164,6 +164,7 @@ public class LC0695MaxAreaofIsland {
     // Can you Deque instead of Stack. Deque is an interface, use LinedList class that implements Deque.
     // Deque does not has empty method instead it has size.
 
+    /*
     private static int dfsExplore(Stack<int[]> stack, int[][] grid, int sr, int sc, boolean[][] visited)
     {
 
@@ -221,20 +222,42 @@ public class LC0695MaxAreaofIsland {
 
         return maxCCSize;
     }
+     */
 
-    public static void main(String[] args) {
-        int[][] grid = {
-                {0,0,1,0,0,0,0,1,0,0,0,0,0},
-                {0,0,0,0,0,0,0,1,1,1,0,0,0},
-                {0,1,1,0,1,0,0,0,0,0,0,0,0},
-                {0,1,0,0,1,1,0,0,1,0,1,0,0},
-                {0,1,0,0,1,1,0,0,1,1,1,0,0},
-                {0,0,0,0,0,0,0,0,0,0,1,0,0},
-                {0,0,0,0,0,0,0,1,1,1,0,0,0},
-                {0,0,0,0,0,0,0,1,1,0,0,0,0}
-        };
+    private static final int[][] directions = {
+            {1, 0},
+            {-1, 0},
+            {0, 1},
+            {0, -1}
+    };
 
-        System.out.println(maxAreaOfIsland(grid));
+    private int dfs(int[][] grid, int row, int col)
+    {
+        if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] != 1)
+            return 0;
+        grid[row][col] = 2;
+        int area = 1;
+
+        for (int[] dir : directions)
+            area += dfs(grid, row + dir[0], col + dir[1]);
+
+        return area;
     }
 
+    public int maxAreaOfIsland(int[][] grid)
+    {
+        int maxArea = 0;
+        for (int r = 0; r < grid.length; r++)
+        {
+            for (int c = 0; c < grid[0].length; c++)
+            {
+                if (grid[r][c] == 1)
+                {
+                    maxArea = Math.max(maxArea, dfs(grid, r, c));
+                }
+            }
+        }
+
+        return maxArea;
+    }
 }
